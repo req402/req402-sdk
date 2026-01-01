@@ -1,5 +1,4 @@
-from .reporter import Flow402Reporter
-from .langchain import track_tool
+from .middleware import Flow402Middleware
 
-__version__ = "0.1.0"
-__all__ = ["Flow402Reporter", "track_tool"]
+__version__ = "0.1.1"
+__all__ = ["Flow402Middleware"]
