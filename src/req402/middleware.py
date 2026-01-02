@@ -4,23 +4,23 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from typing import Optional
 import os
 
-class Flow402Middleware(BaseHTTPMiddleware):
+class req402Middleware(BaseHTTPMiddleware):
     """
-    Fully automatic Flow402 middleware for FastAPI + x402.
+    Fully automatic req402 middleware for FastAPI + x402.
     
-    Detects successful x402 payments from popular libraries and reports to Flow402 dashboard.
+    Detects successful x402 payments from popular libraries and reports to req402 dashboard.
     
     Usage – ONLY ONE LINE:
-        app.add_middleware(Flow402Middleware, api_key="fk_your_key")
+        app.add_middleware(req402Middleware, api_key="fk_your_key")
     """
     
     def __init__(self, app, api_key: Optional[str] = None, backend_url: Optional[str] = None):
         super().__init__(app)
-        self.api_key = api_key or os.getenv("FLOW402_API_KEY")
-        self.backend_url = backend_url or "https://flow402-backend.onrender.com"
+        self.api_key = api_key or os.getenv("REQ402_API_KEY")
+        self.backend_url = backend_url or "https://req402-backend.onrender.com"
         
         if not self.api_key:
-            raise ValueError("Flow402 API key is required. Pass it or set FLOW402_API_KEY env var.")
+            raise ValueError("req402 API key is required. Pass it or set REQ402_API_KEY env var.")
 
     async def dispatch(self, request: Request, call_next) -> Response:
         response: Response = await call_next(request)
