@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "flow402-sdk"
+name = "req402-sdk"
 version = "0.2.0"
 description = "The easiest automatic analytics SDK for x402 payments"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Flow402"},
+    {name = "req402"},
 ]
 keywords = ["x402", "payments", "analytics", "micropayments", "fastapi", "revenue"]
 
@@ -24,9 +24,9 @@ dependencies = [
 dev = ["pytest", "httpx"]
 
 [project.urls]
-Homepage = "https://flow402.com"
-Repository = "https://github.com/flow402app/flow402-sdk"
-Documentation = "https://github.com/flow402app/flow402-sdk#readme"
+Homepage = "https://req402.com"
+Repository = "https://github.com/req402/req402-sdk"
+Documentation = "https://github.com/req402/req402-sdk#readme"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/flow402"]
+packages = ["src/req402"]
