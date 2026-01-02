@@ -17,7 +17,7 @@ class req402Middleware(BaseHTTPMiddleware):
     def __init__(self, app, api_key: Optional[str] = None, backend_url: Optional[str] = None):
         super().__init__(app)
         self.api_key = api_key or os.getenv("REQ402_API_KEY")
-        self.backend_url = backend_url or "https://req402-backend.onrender.com"
+        self.backend_url = backend_url or "https://flow402-backend.onrender.com"
         
         if not self.api_key:
             raise ValueError("req402 API key is required. Pass it or set REQ402_API_KEY env var.")
